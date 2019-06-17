@@ -1,9 +1,9 @@
-# Большой заголовок
+# Рекламма сервис
 
-Что использовал в проекте:
+What I use in project:
 
  - npm, gulp, bower
- - sass, normalize.css, bootstrap
+ - sass, normalize.css, flexbox
  - jquery
  
 ![описание картинки](preview/medium.png)

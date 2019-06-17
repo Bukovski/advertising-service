@@ -13,9 +13,6 @@ const gulp = require("gulp"),
   
   htmlmin = require('gulp-htmlmin'), //html минификатор
   
-  fontmin = require('gulp-fontmin'), //генерироует разные форматы шрифтов из ttf
-  ttf2woff2 = require('gulp-ttf2woff2'), //генерироует формат шрифтов woff2 из ttf
-
   imagemin = require('gulp-imagemin'), //сжимает размер картинок
   responsive = require('gulp-responsive-images'), //картинки разных размеров (для работы нужно поставить программу graphicsmagick)
   imageminJpegRecompress = require('imagemin-jpeg-recompress'),
@@ -142,15 +139,6 @@ function minJs () {
 function fonts() { //копирование шрифтов с папки в папку без обработки
   return gulp.src(PATH.fontInput)
     .pipe(gulp.dest(PATH.fontOutput));
-};
-
-function fontGen() { //создает из форамата ttf файлы eot svg woff woff2
-  return gulp.src(PATH.fontGenerateInput)
-    .pipe(fontmin({
-      text: 'corresponding glyphs',
-    }))
-    .pipe(ttf2woff2())
-    .pipe(gulp.dest(PATH.fontGenerateOutput));
 };
 
 /********************************* html *************************************/
@@ -323,7 +311,6 @@ gulp.task("js-lib", libsJS); //склеивает все подключенны�
 gulp.task("js-min", minJs); //сжимает склеинные скрипты
 
 gulp.task("fonts", fonts); //gulp fonts   переносит шрифты с папками в папку public
-gulp.task("fontgen", fontGen); //gulp fontgen   генерирует шрифты eot svg ttf woff woff2 и css с подключением
 
 gulp.task("template", template); //gulp template   переносит html в папку public
 gulp.task("del", clean); //gulp del   удалит папку public

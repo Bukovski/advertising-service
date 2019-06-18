@@ -39,16 +39,150 @@ body
 	overflow-x: hidden
 	opacity: 1
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
 	
 /*------------------ MY STYLE -----------------
-	PRODUCTS
-	INFORMATION COMPANY
-	SOCIAL
+	HEADER
 	FOOTER */
+.container
+	display: flex
+	flex-direction: column
+	
+	height: 100%
+	max-width: $innerGrid
+	margin: 0 auto
+	
+/*------------------ HEADER ------------------*/
+
+.header
+	width: 100%
+	height: 700px
+	background: linear-gradient(to top, rgba(173, 173, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(215, 215, 215, 0.2) 100%), url("../image/bg/header-bg.svg") $greyLight no-repeat center
+	background-size: cover
+
+	&__main
+		display: flex
+		justify-content: space-between
+			
+		margin-top: 50px
+		
+	&__logo-link
+		margin-left: 10px
+		margin-right: 10px
+		
+	&__logo-img
+		@extend %img-responsive
+	
+	&__info
+		display: flex
+		justify-content: space-between
+		
+	&__phone-icon
+		margin-right: 12px
+		@extend .sprite-icon-phone
+	
+	&__wrap-info
+	
+	&__phone-call
+		color: $black
+		font-size: 30px
+		font-weight: 400
+		line-height: 10px
+		letter-spacing: -1.8px
+		text-transform: uppercase
+		text-decoration: none
+		white-space: nowrap
+	
+	&__working-hours
+		margin: 0 0 0 2px
+		font-size: 12px
+		font-weight: 400
+		line-height: 11px
+		letter-spacing: -0.7px
+	
+	&__menu
+		margin-right: -10px
+		
+	&__list
+		display: flex
+		justify-content: space-between
+		
+		width: 100%
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__item
+		position: relative
+		margin: 0 0 0 0
+		
+	&__link
+		display: block
+		padding: 16px 12px
+		border-top: 2px solid transparent
+		font-size: 16px
+		font-weight: 400
+		text-transform: uppercase
+		letter-spacing: -1.1px
+		text-decoration: none
+		white-space: nowrap
+		color: $white
+		transition: .5s ease-in-out
+		
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 2px
+			background: $white
+			transform: scale3d(0, 1, 1)
+			transition: transform .25s
+			
+		&:hover::before
+			transform: scale3d(1, 1, 1)
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+			transition-duration: 0.3s
+	
+	&__preview
+		display: flex
+		align-items: center
+		
+		height: 100%
+	
+	&__wrap-img
+		flex: 0 1 auto
+		
+	&__img
+		margin-top: 35px
+		@extend %img-responsive
+		
+	&__title
+		width: 435px
+		margin: 0 8px 45px
+		padding: 25px 30px
+		border: 4px solid $white
+		font-size: 40px
+		font-weight: 800
+		text-transform: uppercase
+		letter-spacing: -2.4px
+		line-height: 45px
+		color: $white
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------ FOOTER ------------------*/
 
 
 @import "fonts"

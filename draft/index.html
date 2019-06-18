@@ -31,31 +31,65 @@
   <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
   
   <!--[if lt IE 9]>
-    <script src="./js/polyfill.min.js" type="application/javascript"></script>
+  <script src="./js/polyfill.min.js" type="application/javascript"></script>
   <![endif]-->
 </head>
 <body>
 
 
-<div class="container">
-  
-  <div class="row">
-    
-    <div class="col-sm-8 col-sm-offset-2">
-      
-      <img class="img-responsive" src="image/logos/logo.png" alt="Start HTML5 Template">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci alias animi corporis cupiditate, dolorem laboriosam molestiae nemo nobis numquam perferendis provident quaerat reprehenderit rerum sit tenetur veniam voluptates.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, amet at illo iusto, labore laudantium maiores minus nihil possimus rerum, sequi suscipit tempora totam? Aperiam eius laudantium nobis sint suscipit?</p>
-    
+<header class="header">
+  <div class="container">
+    <div class="header__main">
+      <a class="header__logo-link" href="#" title="реклама сервис">
+        <img class="header__logo-img" src="./image/logos/logo.png">
+      </a>
+      <!-- ./header__logo-link -->
+      <div class="header__info">
+        <span class="header__phone-icon"></span>
+        <!-- ./header__phone-icon -->
+        <div class="header__wrap-info">
+          <a class="header__phone-call" href="tel:+89274422948" title="Набрать номер">8 (927) 44-22-948</a>
+          <p class="header__working-hours">Режим работы: Пн-Вс с 9:00 до 18:00</p>
+        </div>
+        <!-- /.header__wrap-info -->
+      </div>
+      <!-- /.header__info -->
+      <nav class="header__menu">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#" class="header__link">Главная</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Портфолио</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Услуги</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">О компании</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">Услуги</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.header__menu -->
     </div>
-  
+    <!-- ./header__main -->
+    <div class="header__preview">
+      <div class="header__wrap-img">
+        <img class="header__img" src="./image/banners/header-banner.png">
+      </div>
+      <h1 class="header__title">Изготовление наружной рекламы в Казани</h1>
+    </div>
+    <!-- ./header__preview -->
   </div>
-
-</div>
+</header>
 
 
 
 <link rel="stylesheet" href="./css/main.css">
-<script src="./js/script.min.js" type="application/javascript"></script>
+<script type="application/javascript" src="./js/libs.min.js" ></script>
+<script type="application/javascript" src="./js/script.js" ></script>
 </body>
 </html>

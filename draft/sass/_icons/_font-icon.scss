@@ -1,39 +1,36 @@
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'fontIcon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.icon:before {
+	font-family: "icon-fonts";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
 }
+
 
 .icon-delivery:before {
-  content: "\e900";
+	content: "\E001";
 }
-.icon-garbadge:before {
-  content: "\e901";
-}
-.icon-gear:before {
-  content: "\e902";
-}
-.icon-logout:before {
-  content: "\e903";
-}
-.icon-paint:before {
-  content: "\e904";
-}
-.icon-tools:before {
-  content: "\e905";
-}
-/*
-Example use
 
-<span class="icon-tools"></span>
-<span class="icon-delivery"></span>
- */
+.icon-garbadge:before {
+	content: "\E002";
+}
+
+.icon-gear:before {
+	content: "\E003";
+}
+
+.icon-logout:before {
+	content: "\E004";
+}
+
+.icon-paint:before {
+	content: "\E005";
+}
+
+.icon-tools:before {
+	content: "\E006";
+}

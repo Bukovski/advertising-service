@@ -1,0 +1,64 @@
+%svg-common {
+	background: url("../image/sprite/sprite.svg") no-repeat;
+}
+
+svg-sprite-delivery {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+svg-sprite-delivery-dims {
+	width: 1000px;
+	height: 1000px;
+}
+
+svg-sprite-garbadge {
+	@extend %svg-common;
+	background-position: 50% 0;
+}
+
+svg-sprite-garbadge-dims {
+	width: 1000px;
+	height: 1000px;
+}
+
+svg-sprite-gear {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+svg-sprite-gear-dims {
+	width: 1000px;
+	height: 1000px;
+}
+
+svg-sprite-logout {
+	@extend %svg-common;
+	background-position: 50% 100%;
+}
+
+svg-sprite-logout-dims {
+	width: 1000px;
+	height: 1000px;
+}
+
+svg-sprite-paint {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+svg-sprite-paint-dims {
+	width: 1000px;
+	height: 1000px;
+}
+
+svg-sprite-tools {
+	@extend %svg-common;
+	background-position: 100% 100%;
+}
+
+svg-sprite-tools-dims {
+	width: 1000px;
+	height: 1000px;
+}
+

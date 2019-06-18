@@ -13,6 +13,9 @@ const gulp = require("gulp"),
   
   htmlmin = require('gulp-htmlmin'), //html минификатор
   
+  fontmin = require('gulp-fontmin'), //генерироует разные форматы шрифтов из ttf
+  ttf2woff2 = require('gulp-ttf2woff2'), //генерироует формат шрифтов woff2 из ttf
+
   imagemin = require('gulp-imagemin'), //сжимает размер картинок
   responsive = require('gulp-responsive-images'), //картинки разных размеров (для работы нужно поставить программу graphicsmagick)
   imageminJpegRecompress = require('imagemin-jpeg-recompress'),
@@ -20,6 +23,8 @@ const gulp = require("gulp"),
   
   spritesmith = require('gulp.spritesmith'), //png sprite
   svgSprite = require('gulp-svg-sprite'), //svg sprite
+  iconfont = require('gulp-iconfont'), //svg2font sprite icon
+  iconfontCss = require('gulp-iconfont-css');
   
   ngrok = require('ngrok'),
   browserSync = require("browser-sync").create(); // Browser Sync для перезагрузки страницы
@@ -141,6 +146,13 @@ function fonts() { //копирование шрифтов с папки в па
     .pipe(gulp.dest(PATH.fontOutput));
 };
 
+function fontGen() { //создает из форамата ttf файлы eot svg woff woff2
+  return gulp.src(PATH.fontGenerateInput)
+    .pipe(fontmin())
+    .pipe(ttf2woff2())
+    .pipe(gulp.dest(PATH.fontGenerateOutput));
+};
+
 /********************************* html *************************************/
 function template() { //копирование шрифтов с папки в папку с сжатием
   return gulp.src(PATH.templateInput)
@@ -193,15 +205,15 @@ function imageResponsive () { //создлает миниатюры изобра
           height: 320,
           rename: { suffix: '-miniature' } //приствка к сгенерированным изобржениям
         }, {*/
-          quality: 70,
+          quality: 90,
           width: 1400,
           rename: { suffix: '-1280' }
         }, {
-          quality: 70,
+          quality: 90,
           width: 760,
           rename: { suffix: '-640' }
         }, {
-          quality: 70,
+          quality: 90,
           width: 500,
           rename: { suffix: '-480' }
         }
@@ -211,7 +223,7 @@ function imageResponsive () { //создлает миниатюры изобра
 
 /*********************************** sprites ***********************************/
 
-function generateSpriteImage () {
+function spriteImage () {
   const spriteData = gulp.src(PATH.imageSpriteInput)
     .pipe(spritesmith({
       imgName: 'sprite.png',
@@ -230,7 +242,7 @@ function generateSpriteImage () {
 }
 
 
-function generateSpriteSVG () {
+function spriteSVG () {
   return gulp.src(PATH.svgSpriteInput)
     .pipe(svgSprite(
       {
@@ -238,7 +250,7 @@ function generateSpriteSVG () {
         'css': {
           'dest': '',
           'prefix': 'svg-sprite-',
-          'sprite': '../image/sprite.svg',
+          'sprite': '../image/sprite/sprite.svg',
           'bust': false,
           'render': {
             'scss': {
@@ -253,8 +265,26 @@ function generateSpriteSVG () {
       }
     }
     ))
-    .pipe(gulp.dest(PATH.imageSpriteImgOutput));
+    .pipe(gulp.dest(PATH.imageSpriteImgOutput + "../"));
 };
+
+
+function spriteSvg2Font () {
+  const fontName = 'icon-fonts';
+  
+  return gulp.src(PATH.svgSpriteInput)
+    .pipe(iconfontCss({
+      fontName: fontName,
+      targetPath: '../../sass/_icons/_font-icon.scss',
+      fontPath: "../fonts/font-icon/"
+    }))
+    .pipe(iconfont({
+      fontName: fontName,
+      prependUnicode: true,
+      formats: ['ttf', 'eot', 'svg', 'woff', 'woff2'],
+    }))
+    .pipe(gulp.dest(PROJECT_FOLDERS.START + "fonts/font-icon/"));
+}
 
 /*********************************** server ***********************************/
 
@@ -311,14 +341,16 @@ gulp.task("js-lib", libsJS); //склеивает все подключенны�
 gulp.task("js-min", minJs); //сжимает склеинные скрипты
 
 gulp.task("fonts", fonts); //gulp fonts   переносит шрифты с папками в папку public
+gulp.task("fontgen", fontGen); //gulp fontgen   генерирует шрифты eot svg ttf woff woff2 и css с подключением
 
 gulp.task("template", template); //gulp template   переносит html в папку public
 gulp.task("del", clean); //gulp del   удалит папку public
 
 gulp.task("favicon", favicon); //gulp favicon   переносит favicon с папками в папку public
 
-gulp.task("sprite-img", generateSpriteImage); //создает спрайт из группы картинок в папке image/sprite/ и создает scss в sass/_icons/_sprite-icon.scss
-gulp.task('sprite-svg', generateSpriteSVG); //SVG спрайт из image/sprite/svg-sprite и создаст scss в sass/_icons/_svg-sprite-icon.scss
+gulp.task("sprite-img", spriteImage); //создает спрайт из группы картинок в папке image/sprite/ и создает scss в sass/_icons/_sprite-icon.scss
+gulp.task('sprite-svg', spriteSVG); //SVG спрайт из image/sprite/svg-sprite и создаст scss в sass/_icons/_svg-sprite-icon.scss
+gulp.task("sprite-svg2font", spriteSvg2Font); //font icons из svg image/sprite/svg-sprite и создаст scss в sass/_icons/_font-icon.scss и создает шрифтовые инконки в fonts/font-icon
 
 gulp.task("image-min", imageMin); //gulp image-min   сжимаем все картинки и переносим в public/image
 gulp.task("image-responsive", imageResponsive); //gulp image-min   сжимаем все картинки и переносим в public/image

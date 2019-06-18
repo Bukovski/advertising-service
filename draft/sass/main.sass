@@ -43,6 +43,7 @@ body
 /*------------------ MY STYLE -----------------
 	HEADER
 	FOOTER */
+ 
 .container
 	display: flex
 	flex-direction: column
@@ -113,11 +114,11 @@ body
 		
 	&__item
 		position: relative
-		margin: 0 0 0 0
+		margin: 0 10px
 		
 	&__link
 		display: block
-		padding: 16px 12px
+		padding: 16px 2px
 		border-top: 2px solid transparent
 		font-size: 16px
 		font-weight: 400
@@ -126,7 +127,6 @@ body
 		text-decoration: none
 		white-space: nowrap
 		color: $white
-		transition: .5s ease-in-out
 		
 		&::before
 			content: ''
@@ -139,7 +139,8 @@ body
 			transform: scale3d(0, 1, 1)
 			transition: transform .25s
 			
-		&:hover::before
+		&:hover::before,
+		.header__item--active > &::before
 			transform: scale3d(1, 1, 1)
 			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 			transition-duration: 0.3s
@@ -169,6 +170,70 @@ body
 		line-height: 45px
 		color: $white
 
+/*------------------ PORTFOLIO ------------------*/
+.portfolio
+	max-width: 100%
+	
+	&__menu
+	
+	&__list
+		display: flex
+		
+		width: 100%
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__item
+		flex: auto
+		
+		position: relative
+		margin: 0
+		border: 1px solid $greyLighter
+		background-color: $whiteMiddle
+		
+	&__link
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		
+		height: 300px
+		text-decoration: none
+		
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 10px
+			background: $red
+			transform: scale3d(0, 1, 1)
+			transition: transform .25s
+		
+		&:hover::before,
+		.portfolio__item--active > &::before
+			transform: scale3d(1, 1, 1)
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+			transition-duration: 0.3s
+		
+	&__wrap-img
+		display: flex
+		align-items: center
+		
+		height: 188px
+		
+	&__img
+		@extend %img-responsive
+		
+	&__title
+		margin: 0
+		font-size: 18px
+		font-weight: 800
+		text-transform: uppercase
+		letter-spacing: -1.08px
+		color: $greyDark
 
 
 

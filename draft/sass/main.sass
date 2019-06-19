@@ -52,13 +52,60 @@ body
 	max-width: $innerGrid
 	margin: 0 auto
 	
+.description
+	display: flex
+	flex-direction: column
+	align-items: center
+	
+	&__title
+		margin: 0
+		font-size: 35px
+		font-weight: 800
+		line-height: 45px
+		letter-spacing: -2.1px
+		text-transform: uppercase
+	
+	&__dash
+		color: $greyLighter
+		
+		&:before
+			content: ""
+			display: inline-block
+			position: relative
+			bottom: 3px
+			right: 5px
+			width: 100px
+			height: 1px
+			background-color: $greyLighter
+		
+		&:after
+			content: ""
+			display: inline-block
+			position: relative
+			bottom: 3px
+			left: 5px
+			width: 100px
+			height: 1px
+			background-color: $greyLighter
+			
+.btn
+	padding: 22px 17px
+	border: 2px solid $white
+	font-size: 20px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: -1.5px
+	background-color: $white
+	color: $red
+	
 /*------------------ HEADER ------------------*/
 
 .header
 	width: 100%
 	height: 700px
-	background: linear-gradient(to top, rgba(173, 173, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(215, 215, 215, 0.2) 100%), url("../image/bg/header-bg.svg") $greyLight no-repeat center
+	background: linear-gradient(to top, rgba(173, 173, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(215, 215, 215, 0.2) 100%), url("../image/bg/header-bg.svg") $greyLight no-repeat 48% center
 	background-size: cover
+	background-attachment: fixed /*parallax*/
 
 	&__main
 		display: flex
@@ -234,12 +281,117 @@ body
 		text-transform: uppercase
 		letter-spacing: -1.08px
 		color: $greyDark
+		
+/*------------------ SERVICES ------------------*/
 
+.icon:before
+	line-height: 10px
+	
+.services
+	padding-top: 120px
+	padding-bottom: 65px
+	
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		
+		margin-top: 43px
+		
+	&__grid
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		flex: 1 1 400px
+		
+		height: 260px
+		color: $purple
+		cursor: pointer
+		transition: .3s
+		
+		&:hover
+			background-color: $purple
+			color: $white
+		
+	&__wrap-icon
+		display: flex
+		justify-content: center
+		align-items: flex-end
+		
+		height: 90px
+		width: 90px
+		font-size: 60px
+	
+	&__title
+		width: 250px
+		margin: 0
+		text-align: center
+		font-size: 18px
+		font-weight: 600
+		line-height: 20px
+		letter-spacing: -1.08px
+		text-transform: uppercase
 
+/*------------------ FREE ------------------*/
+.free
+	width: 100%
+	height: 520px
+	background: linear-gradient(to top, rgba(173, 173, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(215, 215, 215, 0.2) 100%), url("../image/bg/content-bg.svg") $greyLight no-repeat 70% center
+	background-size: cover
+	background-attachment: fixed /*parallax*/
+	
+	.container
+		flex-direction: row
+		align-items: center
+	
+	&__wrap
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-start
+		flex: 0 1 800px
+		
+		height: 328px
+		margin-left: 10px
+		
+	&__content
+		//margin-bottom: 70px
+		color: $white
+		
+	&__title
+		margin: 0
+		margin-bottom: 33px
+		font-size: 35px
+		font-weight: 600
+		letter-spacing: -1.6px
+		line-height: 28px
+		text-transform: uppercase
+		
+	&__subtitle
+		margin: 0
+		font-size: 32px
+		font-weight: 400
+		letter-spacing: -0.2px
+		word-spacing: 3px
+		line-height: 28px
+		text-transform: uppercase
+		
+	&__text
+		margin-top: 25px
+		font-size: 20px
+		font-weight: 400
+		line-height: 25px
+		letter-spacing: -1.2px
+		
+	&__img-wrap
+		align-self: flex-end
+		flex: auto
+		
+	&__img
+		@extend %img-responsive
 
-
-
-
+/*------------------ ADVANTAGES ------------------*/
+.advantages
 
 
 

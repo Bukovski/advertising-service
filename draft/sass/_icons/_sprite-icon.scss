@@ -42,19 +42,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .sprite-icon-contact-1 {
   background-image: url(../image/sprite.png);
-  background-position: -122px -38px;
+  background-position: -108px -58px;
   width: 10px;
   height: 14px;
 }
 .sprite-icon-contact-2 {
   background-image: url(../image/sprite.png);
-  background-position: -132px -38px;
+  background-position: -118px -58px;
   width: 10px;
   height: 14px;
 }
 .sprite-icon-contact-3 {
   background-image: url(../image/sprite.png);
-  background-position: -108px -38px;
+  background-position: -124px -38px;
   width: 14px;
   height: 14px;
 }
@@ -63,4 +63,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: -108px 0px;
   width: 35px;
   height: 38px;
+}
+.sprite-play {
+  background-image: url(../image/sprite.png);
+  background-position: -108px -38px;
+  width: 16px;
+  height: 20px;
 }

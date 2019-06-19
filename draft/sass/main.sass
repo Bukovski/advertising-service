@@ -95,14 +95,24 @@ body
 	font-weight: 700
 	text-transform: uppercase
 	letter-spacing: -1.5px
+	cursor: pointer
 	background-color: $white
 	color: $red
+	transition: .5s
+	
+	&:hover
+		background-color: $purple
+		color: $white
 	
 /*------------------ HEADER ------------------*/
 
 .header
+	display: flex
+	flex-direction: column
+	
 	width: 100%
-	height: 700px
+	//height: 700px
+	height: 1000px
 	background: linear-gradient(to top, rgba(173, 173, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(215, 215, 215, 0.2) 100%), url("../image/bg/header-bg.svg") $greyLight no-repeat 48% center
 	background-size: cover
 	background-attachment: fixed /*parallax*/
@@ -392,14 +402,167 @@ body
 
 /*------------------ ADVANTAGES ------------------*/
 .advantages
+	margin-top: 113px
+	
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		
+		margin-top: 10px
+		
+	&__grid
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		flex: 1 1 50%
+		
+		height: 140px
+		
+	&__wrap-icon
+		display: flex
+		justify-content: center
+		
+		width: 54px
+		height: 54px
+		margin: 0 27px 0 10px
+		
+	&__icon
+		display: inline-block
+		
+	&__content
+		max-width: 450px
+		
+	&__title
+		margin: 0
+		margin-bottom: 15px
+		font-size: 20px
+		font-weight: 700
+		letter-spacing: -1.2px
+		text-transform: uppercase
+		color: $purple
+		
+	&__text
+		margin: 0
+		font-size: 17px
+		line-height: 20px
+		letter-spacing: -1px
 
+/*------------------ CLIENTS ------------------*/
+.clients
+	margin-top: 70px
+	margin-bottom: 80px
+	
+	&__wrap
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		
+		margin-top: 20px
+		
+	&__grid
+		display: flex
+		justify-content: center
+		align-items: center
+		flex: 1 1 33.33%
+		
+		height: 130px
+		
+	&__img
+		margin: 10px
 
-
-
-
-
+/*------------------ PRODUCT ------------------*/
+.product
+	height: 450px
+	width: 100%
+	//background: linear-gradient(to top, rgba(103, 14, 122, 0.7) 100%, rgba(103, 14, 122, 0.7) 100%), url("../image/bg/production-bg.jpg") $purple no-repeat center
+	background-color: rgb(103, 14, 122)
+	background-image: linear-gradient(to top, rgba(103, 14, 122, 0.7) 100%, rgba(103, 14, 122, 0.7) 100%), url(http://localhost:3000/image/bg/production-bg.jpg)
+	background-position: 0%, 50%
+	background-size: cover
+	
+	.container
+		align-items: center
+		justify-content: center
+	
+	&__wrap
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		
+		height: 220px
+		
+	&__title
+		margin: 0
+		font-size: 35px
+		font-weight: 800
+		text-transform: uppercase
+		letter-spacing: -2.1px
+		line-height: 35px
+		color: $white
+		
+	&__text
+		margin: 0
+		font-size: 20px
+		font-weight: 400
+		text-transform: uppercase
+		letter-spacing: -1.2px
+		color: $white
+		
+	&__btn
+		padding: 22px 40px
+		border: 1px solid $white
+		font-size: 20px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: -1.2px
+		cursor: pointer
+		color: $white
+		background-color: transparent
+		
+		&:before
+			content: ""
+			display: inline-block
+			position: relative
+			top: 2px
+			margin: 0 15px 0 0
+			transition: 1s ease-in-out
+			
+			@extend .sprite-play
+			
+		&:hover
+			background-color: $red
 
 /*------------------ FOOTER ------------------*/
+.footer
+	&__map-container
+	&__contacts
+	&__title
+		font-size: 35px
+		font-weight: 800
+		letter-spacing: -2.1px
+		text-transform: uppercase
+		color: $purple
+		
+	&__address
+	&__location
+	&__phone
+	&__mail
+	&__text
+	&__btn
+		padding: 25px 50px
+		color: $white
+		background-color: $red
+		
+		&:hover
+			background-color: $purple
+		
+	&__bg
+		height: 35px
+		width: 100%
+		background: url("../image/bg/footer-bg.svg") $greyLighter no-repeat center
+		background-size: cover
 
 
 @import "fonts"

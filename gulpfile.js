@@ -46,7 +46,9 @@ const PATH = {
   ], //поддержка старыми браузерами
   scriptLibs: [
     PROJECT_FOLDERS.START + "_libs/jquery/dist/jquery.min.js",
-    // PROJECT_FOLDERS.START + "_libs/owl.carousel/dist/owl.carousel.min.js"
+    PROJECT_FOLDERS.START + "_libs/jquery.maskedinput/dist/jquery.maskedinput.min.js",
+    PROJECT_FOLDERS.START + "_libs/validate/dist/validate.polyfills.min.js",
+    PROJECT_FOLDERS.START + "_libs/validate/dist/validate.min.js",
   ], //подключаем свои библиотеки
   scriptInput: [
     PROJECT_FOLDERS.START + "js/**/*.js"

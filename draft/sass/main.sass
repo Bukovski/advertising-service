@@ -286,6 +286,7 @@ body
 		
 	&__title
 		margin: 0
+		text-align: center
 		font-size: 18px
 		font-weight: 800
 		text-transform: uppercase
@@ -470,7 +471,7 @@ body
 		
 	&__img
 		margin: 10px
-		filter: grayscale(100%)
+		filter: grayscale(60%)
 		transition: .25s
 		
 		&:hover
@@ -482,7 +483,7 @@ body
 	width: 100%
 	//background: linear-gradient(to top, rgba(103, 14, 122, 0.7) 100%, rgba(103, 14, 122, 0.7) 100%), url("../image/bg/production-bg.jpg") $purple no-repeat center
 	background-color: rgb(103, 14, 122)
-	background-image: linear-gradient(to top, rgba(103, 14, 122, 0.7) 100%, rgba(103, 14, 122, 0.7) 100%), url(http://localhost:3000/image/bg/production-bg.jpg)
+	background-image: linear-gradient(to top, rgba(103, 14, 122, 0.7) 100%, rgba(103, 14, 122, 0.7) 100%), url("../image/bg/production-bg.jpg")
 	background-position: 0%, 50%
 	background-size: cover
 	
@@ -638,6 +639,101 @@ body
 		width: 100%
 		background: url("../image/bg/footer-bg.svg") $greyLighter no-repeat center
 		background-size: cover
+
+/*------------------ UP ARROW ------------------*/
+.up-arrow
+	display: none
+	position: fixed
+	right: 3%
+	bottom: 5%
+	padding: 5px 15px 0
+	border: 2px solid $white
+	font-size: 30px
+	color: $white
+	background-color: $red
+	cursor: pointer
+	z-index: 10
+
+/*------------------ MODAL ------------------*/
+
+.modal-background
+	display: none
+	//display: inline-block
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	opacity: 0.9
+	background: $purple
+	z-index: 100
+
+.modal
+	position: fixed
+	left: 50%
+	top: 50%
+	margin-left: -212px
+	margin-top: -240px
+	
+	display: none
+	//display: inline-block
+	width: 425px
+	//height: 480px
+	padding: 23px 18px
+	background-color: $white
+	z-index: 101
+
+	&__close
+		position: absolute
+		top: -20px
+		right: -15px
+		cursor: pointer
+	
+	&__title
+		margin: 10px 0
+		margin-bottom: 15px
+		text-align: center
+		font-size: 25px
+		font-weight: 700
+		letter-spacing: -1.8px
+		line-height: 30px
+		text-transform: uppercase
+		color: $purple
+
+	&__form
+		text-align: center
+		
+	&__input
+		width: 380px
+		height: 70px
+		padding-left: 20px
+		margin-top: 20px
+		box-sizing: border-box
+		border: 1px solid $purple
+		font-size: 20px
+		font-weight: 400
+		letter-spacing: -1.2px
+		color: $purple
+		
+		&::placeholder
+			color: $purple
+
+	&__btn
+		height: 70px
+		width: 385px
+		margin: 38px 0 19px
+		padding: 0
+		color: $white
+		background-color: $red
+		@extend .btn
+		
+		&:hover
+			background-color: $purple
+		
+/*------------------ FORM ERROR ------------------*/
+.error-message
+	color: $red
+	font-weight: 600
 
 
 @import "fonts"

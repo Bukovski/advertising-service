@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   
-  <title>title</title>
+  <title>Реклама сервис</title>
   <meta name="description" content="Описание страницы будет видно в поисковиках">
   <meta name="keywords" content="Ключевые слова для поисковиков" />
-  <meta name="author" content="автор страницы" />
+  <meta name="author" content="Bukovski" />
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +29,7 @@
   <meta property="og:image" content="./image/favicon/bigLogo.png">
   
   <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
-  
+  <link rel="stylesheet" href="./css/main.css">
   <!--[if lt IE 9]>
   <script src="./js/polyfill.min.js" type="application/javascript"></script>
   <![endif]-->
@@ -193,7 +193,7 @@
         <p class="free__text">На объекты выезжает специалист, делает необходимые замеры и составляет предварительную смету на изготовление рекламной подукции</p>
       </div>
       <!-- /.free__content -->
-      <button class="btn">заказать замерщика бесплатно</button>
+      <button class="btn js-modal-show" data-position="free">заказать замерщика бесплатно</button>
     </div>
     <!-- /.free__wrap -->
     <div class="free__img-wrap">
@@ -309,7 +309,7 @@
       </address>
       
       <p class="footer__text">проконсультируем Вас через 26 секунд! Бесплатно!</p>
-      <button class="footer__btn">бесплатная консультация</button>
+      <button class="footer__btn js-modal-show" data-position="footer">бесплатная консультация</button>
     </div>
   </div>
   <!-- /.container -->
@@ -317,8 +317,46 @@
 </footer>
 
 
+<div id="js-up" class="up-arrow">
+  <span class="icon icon-arrow-up"></span>
+</div>
+<!-- up button -->
 
-<link rel="stylesheet" href="./css/main.css">
+<div class="modal-background"></div>
+<!-- modal background -->
+
+<div class="modal js-modal" data-position="free">
+  <span class="modal__close sprite-icon-close"></span>
+  <h4 class="modal__title">оставьте заявку <br> для заказа замерщика</h4>
+  
+  <form class="modal__form" data-validate>
+    <input class="modal__input" type="text" name="name" placeholder="Ваше имя ..." minlength="3" maxlength="20" pattern="^[a-zA-Zа-яА-Я][a-zA-ZZа-яА-Я0-9-_\.]{3,20}$" required>
+    <input class="modal__input js-input-phone" type="text" name="phone" placeholder="Ваш телефон ..." value="" pattern="\(d{3})\d{3}[\-]\d{4}" required>
+    <input class="modal__input" type="email" name="email" placeholder="Ваш e-mail ..." minlength="7" maxlength="20" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+    <button class="modal__btn">заказать замерщика бесплатно</button>
+  </form>
+  
+</div>
+<!-- modal 1 -->
+
+<div class="modal js-modal" data-position="footer">
+  <span class="modal__close sprite-icon-close"></span>
+  <h4 class="modal__title">оставьте заявку <br> для заказа консультации</h4>
+  
+  <form class="modal__form" data-validate>
+    <input class="modal__input" type="text" name="name" placeholder="Ваше имя ..." minlength="3" maxlength="20" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,20}$" required>
+    <input class="modal__input js-input-phone" type="text" name="phone" placeholder="Ваш телефон ..." value="" pattern="\(d{3})\d{3}[\-]\d{4}" required>
+    <input class="modal__input" type="email" name="email" placeholder="Ваш e-mail ..." minlength="7" maxlength="20" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+    <button class="modal__btn">заказать консультацию</button>
+  </form>
+
+</div>
+<!-- modal 2 -->
+
+
+
+
+
 <script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 <script type="application/javascript" src="./js/libs.min.js" ></script>
 <script type="application/javascript" src="./js/script.js" ></script>

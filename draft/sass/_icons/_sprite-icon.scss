@@ -40,15 +40,21 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 52px;
   height: 54px;
 }
-.sprite-icon-contact-1 {
+.sprite-icon-close {
   background-image: url(../image/sprite.png);
   background-position: -108px -58px;
+  width: 12px;
+  height: 13px;
+}
+.sprite-icon-contact-1 {
+  background-image: url(../image/sprite.png);
+  background-position: -108px -71px;
   width: 10px;
   height: 14px;
 }
 .sprite-icon-contact-2 {
   background-image: url(../image/sprite.png);
-  background-position: -118px -58px;
+  background-position: -118px -71px;
   width: 10px;
   height: 14px;
 }

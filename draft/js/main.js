@@ -144,5 +144,7 @@ window.onload = (function () {
     }
   }, { once: true });
   
+  /************** Animation ****************/
+  new WOW().init();
   
 })();

@@ -22,6 +22,8 @@
     "normalize.css": "^8.0.1",
     "jquery.maskedinput": "jquery-maskedinput#^1.4.1",
     "validate": "https://github.com/cferdinandi/validate.git#^2.2.0",
-    "pushy": "^1.2.0"
+    "pushy": "^1.2.0",
+    "wow": "wowjs#^1.1.2",
+    "animate.css": "^3.7.2"
   }
 }

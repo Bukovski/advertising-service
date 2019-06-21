@@ -50,6 +50,7 @@ const PATH = {
     PROJECT_FOLDERS.START + "_libs/validate/dist/validate.polyfills.min.js",
     PROJECT_FOLDERS.START + "_libs/validate/dist/validate.min.js",
     PROJECT_FOLDERS.START + "_libs/pushy/js/pushy.min.js",
+    PROJECT_FOLDERS.START + "_libs/wow/dist/wow.min.js"
   ], //подключаем свои библиотеки
   scriptInput: [
     PROJECT_FOLDERS.START + "js/**/*.js"

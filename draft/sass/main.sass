@@ -96,6 +96,7 @@ body
 	text-transform: uppercase
 	letter-spacing: -1.5px
 	cursor: pointer
+	word-break: break-word
 	background-color: $white
 	color: $red
 	transition: .5s
@@ -216,7 +217,7 @@ body
 		@extend %img-responsive
 		
 	&__title
-		width: 435px
+		max-width: 435px
 		margin: 0 8px 45px
 		padding: 25px 30px
 		border: 4px solid $white
@@ -505,7 +506,7 @@ body
 		font-weight: 800
 		text-transform: uppercase
 		letter-spacing: -2.1px
-		line-height: 35px
+		line-height: 40px
 		color: $white
 		
 	&__text
@@ -653,6 +654,10 @@ body
 	background-color: $red
 	cursor: pointer
 	z-index: 10
+	transition: .5s
+	
+	&:hover
+		background-color: $purple
 
 /*------------------ MODAL ------------------*/
 
@@ -688,6 +693,7 @@ body
 		top: -20px
 		right: -15px
 		cursor: pointer
+		z-index: 102
 	
 	&__title
 		margin: 10px 0
@@ -723,6 +729,7 @@ body
 		width: 385px
 		margin: 38px 0 19px
 		padding: 0
+		border: none
 		color: $white
 		background-color: $red
 		@extend .btn
@@ -734,6 +741,72 @@ body
 .error-message
 	color: $red
 	font-weight: 600
+	
+
+/*-------------------- MOBILE MENU --------------------*/
+.hamburger
+	display: none
+	//display: inline-block
+	position: fixed
+	right: 10px
+	top: 5px
+	color: $purple
+	
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after
+	background-color: $black
+
+#mobile-menu,
+.site-overlay
+	display: none
+	//display: inline-block
+	z-index: 100500
+
+.pushy
+	&.pushy-left
+		background-color: $greyLighter
+	
+	.header__menu
+		width: 100%
+		padding-right: 0
+		padding-left: 0
+		margin: 0
+		text-align: left
+	
+	.header__list
+		flex-direction: column
+		
+		margin: 0 auto !important
+		
+	.header__item
+		display: inline-block
+		width: 100%
+		margin-left: 0
+		
+	
+	.header__link
+		padding: 5px 15px
+		font-weight: 600
+		color: $black
+		transition: .5s
+		
+		&:hover,
+		.header__item--active
+			color: $white
+			background-color: $purple
+			
+		&::before
+			display: none
+		
+		&:hover::before,
+		.header__item--active > &::before
+			display: none
+			
+	.header__item--active .header__link
+		color: $white
+		background-color: $purple
+
 
 
 @import "fonts"

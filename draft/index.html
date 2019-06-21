@@ -29,7 +29,7 @@
   <meta property="og:image" content="./image/favicon/bigLogo.png">
   
   <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
-  <link rel="stylesheet" href="./css/main.css">
+  
   <!--[if lt IE 9]>
   <script src="./js/polyfill.min.js" type="application/javascript"></script>
   <![endif]-->
@@ -128,6 +128,17 @@
     </nav>
     <!-- /.portfolio__menu -->
   </div>
+  
+  <!-- hamburger menu -->
+  <div id="js-hamburger" class="hamburger hamburger--squeeze menu-btn">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+  <!--  mobile menu start -->
+  <div id="mobile-menu" class="pushy pushy-left"></div>
+  <div class="site-overlay"></div>
+  <!--  mobile menu finish -->
 </header>
 
 <section class="services">
@@ -355,8 +366,7 @@
 
 
 
-
-
+<link rel="stylesheet" href="./css/main.css">
 <script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 <script type="application/javascript" src="./js/libs.min.js" ></script>
 <script type="application/javascript" src="./js/script.js" ></script>

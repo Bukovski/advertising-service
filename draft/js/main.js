@@ -28,6 +28,10 @@ window.onload = (function () {
     closeHamburger();
   });
   
+  /************** Animation ****************/
+  
+  new WOW().init();
+  
   /*********************** кнопка прокрутки вверх ***********************/
   
   $(window).scroll(function() {
@@ -59,9 +63,18 @@ window.onload = (function () {
     $(elem).fadeIn(500);
   }
   
-  function getAttributePosition(elem) {
+  function getAttributePosition(block) {
     try {
-      return elem.dataset.position;
+      var attr = block.attributes;
+      var attrLength = attr.length;
+      
+      for (var i = 0; i < attrLength; i++) {
+        if (attr[i].nodeName === "data-position") {
+          return attr[i].value;
+        }
+      }
+      
+      return "";
     } catch (e) {
       console.error("Don't find attribute position");
       return "";
@@ -70,7 +83,8 @@ window.onload = (function () {
   
   $modalShow.on("click", function() {
     var getButtonAttribute = getAttributePosition(this);
-    
+    // console.dir(this.attributes[1].nodeName)
+    // console.dir(this.attributes[1].value)
     $modalWindow.each(function (index, elem) {
       if (getAttributePosition(elem) === getButtonAttribute) {
         showModalWindow(elem);
@@ -116,8 +130,7 @@ window.onload = (function () {
   
   /*********************** яндекс карта ***********************/
   
-  document.getElementById("js-map")
-    .addEventListener("click", function() { //click only once
+  $("#js-map").one("click", function() { //click only once
     ymaps.ready(init);
     
     function init() {
@@ -142,9 +155,5 @@ window.onload = (function () {
       
       map.geoObjects.add(placemark);
     }
-  }, { once: true });
-  
-  /************** Animation ****************/
-  new WOW().init();
-  
+  });
 })();

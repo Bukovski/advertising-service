@@ -136,7 +136,7 @@ window.onload = (function () {
     function init() {
       var map = new ymaps.Map("js-map", {
         center: [ 55.77839120, 49.13902268 ],
-        zoom: 17,
+        zoom: 16,
         controls: [ "zoomControl" ], //если массив пуст то все эелементы управления уберутся (нельзя убирать логотип яндекса и пользовательское соглашение)
         behaviors: [ "drag" ] //значение по умолчанию управления картой (можно перетаксивать карту)
       });
@@ -148,7 +148,7 @@ window.onload = (function () {
           preset: 'islands#redDotIcon',
           iconColor: '#cb0529',
           iconLayout: 'default#image',
-          iconImageHref: '../image/icons/map-flag.png',
+          iconImageHref: 'image/icons/map-flag.png',
           iconImageSize: [ 50, 50 ],
           iconImageOffset: [ -25, -50 ]
         });

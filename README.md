@@ -15,4 +15,4 @@ PSD layout is in the templates folder.
 
 
  
-![template layout](templates/desctop-shot.jpg)
+![template layout](./templates/desctop-shot.jpg)

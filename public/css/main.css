@@ -1102,7 +1102,18 @@ body {
 
 /*------------------ MY STYLE -----------------
 	HEADER
-	FOOTER */
+	PORTFOLIO
+	SERVICES
+	FREE
+	ADVANTAGES
+	CLIENTS
+	PRODUCT
+	FOOTER
+	UP ARROW
+	MODAL
+	FORM ERROR
+	MOBILE MENU
+	 */
 .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1115,7 +1126,6 @@ body {
           flex-direction: column;
   height: 100%;
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
 }
 
